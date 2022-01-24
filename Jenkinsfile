@@ -1,8 +1,10 @@
 pipeline{
     agent any
     stages {
-        stage ('compilation') {
-            sh 'mvn -B compile'
+        stage ('Compilation') {
+            steps{
+                sh 'mvn -B compile'
+            }
         }
     }
 }
