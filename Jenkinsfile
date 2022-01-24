@@ -1,8 +1,8 @@
 Pipeline{
-    Agent any
-    Stages {
+    agent any
+    stages {
         stage ('compilation') {
-            Step {
+            step {
                 git 'https://github.com/doonvic/addressbook.git'
             }
             sh 'mvn -B compile'
