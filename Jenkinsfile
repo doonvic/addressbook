@@ -1,5 +1,5 @@
 Pipeline{
-    Agent jenkins-tomcat-node
+    Agent any
     Stages {
         stage ('compilation') {
             Step {
