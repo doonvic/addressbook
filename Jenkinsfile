@@ -8,7 +8,7 @@ pipeline{
         }
         stage ('Static Code Analysis') {
             steps{
-                sh '/opt/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner'
+                sh 'sonar-scanner'
             }
         }
         stage ('Package') {
@@ -19,7 +19,7 @@ pipeline{
         stage ('Deploy') {
             steps{
                 sh 'sudo rm -Rf /var/lib/tomcat9/webapps/addressbook*'
-                sh 'sudo cp ~/tmp/jenkins-data/workspace/Pipeline as code/target/addressbook-2.0.war ~/var/lib/tomcat9/webapps/addressbook.war'
+                sh 'sudo cp ./target/addressbook-2.0.war /var/lib/tomcat9/webapps/addressbook.war'
             }
         }
     }
