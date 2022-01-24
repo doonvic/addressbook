@@ -8,7 +8,7 @@ pipeline{
         }
         stage ('Static Code Analysis') {
             steps{
-                sh 'sonar-scanner'
+                sh '/opt/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner'
             }
         }
         stage ('Package') {
