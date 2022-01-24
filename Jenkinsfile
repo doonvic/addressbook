@@ -18,7 +18,8 @@ pipeline{
         }
         stage ('Deploy') {
             steps{
-                sh 'sudo rm -rf/var/lib/tomcat9/webapps/addressbook.war'
+                sh 'sudo rm -Rf /var/lib/tomcat9/webapps/addressbook.war'
+                sh 'sudo cp /tmp/jenkins-data/workspace/Pipeline as code/target/addressbook-2.0.war /var/lib/tomcat9/webapps/addressbook.war'
             }
         }
     }
