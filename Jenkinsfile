@@ -22,9 +22,14 @@ pipeline{
                 sh 'sudo cp ./target/addressbook-2.0.war /var/lib/tomcat9/webapps/addressbook.war'
             }
         }
+        stage ('Package') {
+            steps{
+                mail bcc: '', body: 'The build is finished', cc: '', from: '', replyTo: '', subject: 'Build Email', to: 'frusv2@gmail.com'
+            }
+        }
     }
 }
-Post {
+post {
     failure {
         sh 'echo the build failed'
     }
