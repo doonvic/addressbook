@@ -27,17 +27,17 @@ pipeline{
                 mail bcc: '', body: 'The build is finished', cc: '', from: '', replyTo: '', subject: 'Build Email', to: 'frusv2@gmail.com'
             }
        }
-     
+     }
+    post{
+        failure {
+             sh 'echo the build failed'
+            }
+        success {
+             sh 'echo the build is successful'
+            }
+        always {
+             sh 'echo the build is complete'
+            }
+        }
     }
-}
-post{
-    failure {
-        sh 'echo the build failed'
-    }
-    success {
-        sh 'echo the build is successful'
-    }
-    always {
-        sh 'echo the build is complete'
-    }
-}
+
